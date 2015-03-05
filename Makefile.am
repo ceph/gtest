@@ -169,7 +169,7 @@ EXTRA_DIST += $(m4data_DATA)
 
 # We define the global AM_CPPFLAGS as everything we compile includes from these
 # directories.
-AM_CPPFLAGS = -I$(srcdir) -I$(srcdir)/include
+AM_CPPFLAGS = -I$(srcdir) -I$(srcdir)/include -DGTEST_HAS_TR1_TUPLE=0
 
 # Modifies compiler and linker flags for pthreads compatibility.
 if HAVE_PTHREADS
@@ -180,7 +180,7 @@ else
 endif
 
 # Build rules for libraries.
-lib_LTLIBRARIES = lib/libgtest.la lib/libgtest_main.la
+noinst_LTLIBRARIES = lib/libgtest.la lib/libgtest_main.la
 
 lib_libgtest_la_SOURCES = src/gtest-all.cc
 
