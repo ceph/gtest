@@ -20,3 +20,4 @@ src/gtest-all.o
 src/gtest_main.lo
 src/gtest_main.o
 test/.deps/
+*.pyc
